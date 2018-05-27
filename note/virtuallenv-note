@@ -1,0 +1,12 @@
+1. To install
+pip install virtualenv virtualenvwrapper
+2. Before using virtual environments every time
+source virtualenvwrapper.sh
+3. Create a virtualenv
+mkvirtualenv name
+4. list virtual environments created
+lsvirtualenv
+5. Activate a virtualenv
+workon name
+6. Deactivate a virtualenv
+deactivate name
