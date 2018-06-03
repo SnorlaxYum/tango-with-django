@@ -1,0 +1,9 @@
+<ul>
+	{% for c in things %}
+	{% if c == act_thing %}
+	<li><a href="{% url 'show_category' c.slug %}"><b>{{ c.name }}</b></a></li>
+	{% else %}
+	<li><a href="{% url 'show_category' c.slug %}">{{ c.name }}</a></li>
+	{% endif %}
+	{% endfor %}
+</ul>

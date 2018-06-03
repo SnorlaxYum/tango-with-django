@@ -1,0 +1,15 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}{{ title }}{% endblock %}
+{% block body_block %}
+<h1>{{ title }}</h1>
+		<div>
+			<a href="/">Return to home</a>
+		</div>
+		<div>
+			This is my about Page.<br>
+			<b>Name: </b> {{ name }}<br>
+			<b>URL: </b> <a href="{{ homepage }}">{{ homepage }}</a><br>
+			<img src="{{ MEDIA_URL }}yes.png" alt="My love">
+		</div>
+{% endblock %}

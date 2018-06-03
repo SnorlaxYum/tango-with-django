@@ -1,0 +1,35 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+Index
+{% endblock %}
+{% block body_block %}
+<h1>Rango says...</h1>
+		<div>
+			hey there partner<br />
+			<br>
+			{% if categories %}
+			<ul>
+				{% for category in categories %}
+				<li><a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a></li>
+				{% endfor %}
+			</ul>
+			{% else %}
+			<b>No categories</b>
+			{% endif %}
+			{% if pages %}
+			<h1>Most viewed pages</h1>
+			<ul>
+				{% for page in pages %}
+				<li><a href={{ page.url }}>{{ page.title }}</a> ({{page.views}})</li>
+				{% endfor %}
+			</ul>
+			{% else %}
+			<b>No pages.</b>
+			{% endif %}
+		</div>
+		<div>
+			<img src={% static "images/rango.png" %}
+			     alt="Picture of my love" />
+		</div>
+{% endblock %}
